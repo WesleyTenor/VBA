@@ -1,0 +1,22 @@
+Function ConvertImgToPDF(Nome As String)
+
+Dim ws As Worksheet
+Dim pic As Picture
+
+               Set ws = Main
+               ws.PageSetup.PaperSize = xlPaperA4
+               ws.PageSetup.Orientation = xlLandscape
+               ws.Range("A1").Activate
+     
+               ActiveSheet.PageSetup.PrintArea = "A:E" 'Insert Img
+           
+               Set pic = ws.Pictures.Insert("Diretorio + nome.extensão")
+           
+               With pic.ShapeRange
+                    .LockAspectRatio = msoFalse
+               End With
+
+                ws.ExportAsFixedFormat Type:=xlTypePDF, _
+                Filename:="Diretorio" & NomeDoArquivo & ".pdf", OpenAfterPublish:=False
+               
+End Function

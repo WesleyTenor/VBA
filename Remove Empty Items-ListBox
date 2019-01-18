@@ -1,3 +1,4 @@
+   For i = (ListBox1.ListCount - 1) To 1 Step -1
    If IsNull(ListBox1.List(i)) Or ListBox1.List(i) = "" Or ListBox1.List(i) = Empty Then
             ListBox1.RemoveItem i
          End If

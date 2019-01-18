@@ -1,5 +1,5 @@
    If IsNull(ListBox1.List(i)) Or ListBox1.List(i) = "" Or ListBox1.List(i) = Empty Then
-            FrmPrincipal.ListBox1.RemoveItem i
+            ListBox1.RemoveItem i
          End If
         Next
       Exit Function
